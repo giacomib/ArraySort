@@ -37,9 +37,15 @@ public class Main {
         //testing of ContaFamiglie class
         double[] valori6 = new double[]{10, 15, 19, 16, 13, 15, 18 ,19, 9, 7, 10};
         double value = 13;
+        double highest = ContaFamiglie.highestIncome(valori6);
+        double highestLess10 = highest * 0.9;
         System.out.println("number of families with income lower than " + value + ": " + ContaFamiglie.countNumberUnderValue(valori6, value));
-        System.out.println("highest income: " + ContaFamiglie.highestIncome(valori6));
+        System.out.println("highest income: " + highest);
         System.out.println("number of families with an income lower than the 90% of the value of the highest income: " + ContaFamiglie.countNumberUnder90(valori6));
+        System.out.println("actual income values of the families that have an income lower than " + highestLess10);
+        for (double element : valori6)
+            if(element < highestLess10)
+                System.out.print(element + " ");
         System.out.println();
     }
 }
