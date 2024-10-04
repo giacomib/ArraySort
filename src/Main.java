@@ -1,10 +1,7 @@
-import java.util.Scanner;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Scanner tastiera = new Scanner(System.in);
+
+        //testing of OrdinaArray class
         int[] valori1 = new int[]{10, 15, 32, 2, 4, 23, 21, 10, 15, 32, 2, 4, 23, -21};
         int[] valori2 = new int[]{-10, 15, 32, 2, 4, 23, 21, 10, 15, 32, 2, 4, 23, -21};
         int[] valori3 = new int[]{10, 15, 32, 2, 4, -23, 21, 10, 15, 32, 2, 4, 23, -21};
@@ -30,5 +27,19 @@ public class Main {
 
         for(int elemento : valori4)
             System.out.print(elemento + " ");
+        System.out.println();
+
+        //testing of NumeriSottoLaMedia class
+        int[] valori5 = new int[]{10, 15, 16, 13, 15, 17 ,19, 9, 7, 10};
+        System.out.println("number of days under the average: " + NumeriSottoLaMedia.daysNumbUnderAve(valori5));
+        System.out.println();
+
+        //testing of ContaFamiglie class
+        double[] valori6 = new double[]{10, 15, 19, 16, 13, 15, 18 ,19, 9, 7, 10};
+        double value = 13;
+        System.out.println("number of families with income lower than " + value + ": " + ContaFamiglie.countNumberUnderValue(valori6, value));
+        System.out.println("highest income: " + ContaFamiglie.highestIncome(valori6));
+        System.out.println("number of families with an income lower than the 90% of the value of the highest income: " + ContaFamiglie.countNumberUnder90(valori6));
+        System.out.println();
     }
 }
