@@ -5,21 +5,16 @@ public class OrdinaArray {
             if(i != indiceValoreMinimo)
                 scambiaValori(i, indiceValoreMinimo, array);
         }
-        assertSorting(array);
-        return;
+        assertSorting(array); //check correctness
     }
 
     public static int indiceMinimo(int inizio, int[] array) {
         int minimo = inizio;
         for (int i = inizio; i <= array.length - 1; i++) {
-            //System.out.println("array[i]: " + array[i]);
             if(array[i] < array[minimo]) {
                 minimo = i;
-                //System.out.println("minimo " + minimo + " inizio: " + inizio + " i: " + i);
-                //System.out.println("array[i]: " + array[i] + " array[minimo]: " + array[minimo]);
             }
         }
-        //System.out.println("end for");
         return minimo;
     }
 
