@@ -47,5 +47,86 @@ public class Main {
             if(element < highestLess10)
                 System.out.print(element + " ");
         System.out.println();
+
+        //Testing of OrdinaArray.rimuovi method
+        int[] valori7 = new int[]{10, 15, 16, 13, 15, 17 ,19, 9, 7, 10};
+        int [] result;
+
+        System.out.println("current array: ");
+        for (int element : valori7)
+            System.out.println(element);
+        System.out.println("array with rimuovi method applied with value = 15: ");
+        result = OrdinaArray.rimuovi(valori7, 15);
+        for (int element : result)
+            System.out.println(element);
+        System.out.println();
+
+        //Testing of OrdinaArray.selectionSort on a characters array
+        char[] arrayOfChar = new char[] {'a', 'c', 'b', 'f', 'r', 'a', 'l'};
+
+        System.out.println("current array: ");
+        for (char element : arrayOfChar)
+            System.out.println(element);
+
+        OrdinaArray.selectionSort(arrayOfChar);
+
+        System.out.println("array with selectionSort method applied: ");
+        for (char element : arrayOfChar)
+            System.out.println(element);
+
+        //Testing of OrdinaArray.partialSelectionSort
+        System.out.println("current array: ");
+        for (int element : valori7)
+            System.out.println(element);
+        System.out.println("array with partialSelectionSort method applied with start = 2, finish = 5: ");
+        OrdinaArray.partialSelectionSort(valori7, 2, 5);
+        for (int element : valori7)
+            System.out.println(element);
+        System.out.println();
+
+        //Testing of OrdinaArray.sequentialSearch method
+        int[] valori8 = new int[] {1, 3, 5, 6, 7, 8, 9, 12, 15};
+        System.out.println("current array: ");
+        for (int element : valori8)
+            System.out.println(element);
+        System.out.println("applying method sequentialSearch with value to search = 9: ");
+        System.out.println(OrdinaArray.sequentialSearch(valori8, 9));
+        System.out.println("applying method sequentialSearch with value to search = 11: ");
+        System.out.println(OrdinaArray.sequentialSearch(valori8, 11));
+
+        //Testing of OrdinaArray.findImage
+        double[][] image1 = new double[][] {
+                {1.2, 1.3, 4.5, 6.0, 2.7},
+                {1.7, 3.3, 4.4, 10.5, 17.0},
+                {1.1, 4.5, 2.1, 25.3, 9.2},
+                {1.0, 9.5, 8.3, 2.9, 2.1}};
+
+        System.out.println("current matrix: ");
+
+        for (double[] row : image1) {
+            for (double element : row)
+                System.out.print(element + " ");
+            System.out.println();
+        }
+
+        double [][] result1 = OrdinaArray.findImage(image1, 1.4);
+
+        System.out.println("matrix result with threshold value of 1.4: ");
+
+        for (double[] row : result1) {
+            for (double element : row)
+                System.out.print(element + " ");
+            System.out.println();
+        }
+
+        double [][] result2 = OrdinaArray.findImage(image1, 0.6);
+
+        System.out.println("matrix result with threshold value of 0.6: ");
+
+        for (double[] row : result2) {
+            for (double element : row)
+                System.out.print(element + " ");
+            System.out.println();
+        }
     }
 }
