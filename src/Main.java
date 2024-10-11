@@ -28,6 +28,7 @@ public class Main {
         for(int elemento : valori4)
             System.out.print(elemento + " ");
         System.out.println();
+        System.out.println();
 
         //testing of NumeriSottoLaMedia class
         int[] valori5 = new int[]{10, 15, 16, 13, 15, 17 ,19, 9, 7, 10};
@@ -46,6 +47,7 @@ public class Main {
         for (double element : valori6)
             if(element < highestLess10)
                 System.out.print(element + " ");
+        System.out.println();
         System.out.println();
 
         //Testing of OrdinaArray.rimuovi method
@@ -73,6 +75,7 @@ public class Main {
         System.out.println("array with selectionSort method applied: ");
         for (char element : arrayOfChar)
             System.out.println(element);
+        System.out.println();
 
         //Testing of OrdinaArray.partialSelectionSort
         System.out.println("current array: ");
@@ -93,6 +96,7 @@ public class Main {
         System.out.println(OrdinaArray.sequentialSearch(valori8, 9));
         System.out.println("applying method sequentialSearch with value to search = 11: ");
         System.out.println(OrdinaArray.sequentialSearch(valori8, 11));
+        System.out.println();
 
         //Testing of OrdinaArray.findImage
         double[][] image1 = new double[][] {
@@ -128,6 +132,7 @@ public class Main {
                 System.out.print(element + " ");
             System.out.println();
         }
+        System.out.println();
 
         //Testing of OrdinaArray.blur
         double[][] image2 = new double[][] {
@@ -145,6 +150,7 @@ public class Main {
                 System.out.print(element + " ");
             System.out.println();
         }
+        System.out.println();
 
         //testing of OrdinaArray.bubbleSort method
         System.out.println("testing of OrdinaArray.bubbleSort method: ");
@@ -176,6 +182,40 @@ public class Main {
         for(int elemento : valori12) {
             System.out.print(elemento + " ");
         }
+        System.out.println();
+        System.out.println();
+
+        //testing of OrdinaArray.insertionSort method
+        System.out.println("testing of OrdinaArray.insertionSort method: ");
+        int[] valori13 = new int[]{10, 15, 32, 2, 4, 23, 21, 10, 15, 32, 2, 4, 23, -21};
+        int[] valori14 = new int[]{-10, 15, 32, 2, 4, 23, 21, 10, 15, 32, 2, 4, 23, -21};
+        int[] valori15 = new int[]{10, 15, 32, 2, 4, -23, 21, 10, 15, 32, 2, 4, 23, -21};
+        int[] valori16 = new int[]{0, 0, 0, 0, 0, 0, 1, 0};
+
+        OrdinaArray.insertionSort(valori13);
+        OrdinaArray.insertionSort(valori14);
+        OrdinaArray.insertionSort(valori15);
+        OrdinaArray.insertionSort(valori16);
+
+        for(int elemento : valori13) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+
+        for(int elemento : valori14) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+
+        for(int elemento : valori15) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+
+        for(int elemento : valori16) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
         System.out.println();
     }
 }

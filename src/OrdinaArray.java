@@ -3,7 +3,7 @@ public class OrdinaArray {
         for (int i = 0; i <= array.length - 2; i++) {
             int indiceValoreMinimo = indiceMinimo(i, array);
             if(i != indiceValoreMinimo)
-                scambiaValori(i, indiceValoreMinimo, array);
+                swap(array, i, indiceValoreMinimo);
         }
         assertSorting(array); //check correctness
     }
@@ -16,12 +16,6 @@ public class OrdinaArray {
             }
         }
         return minimo;
-    }
-
-    public static void scambiaValori(int i, int indiceValoreMinimo, int[] array) {
-        int tmp = array[i];
-        array[i] = array[indiceValoreMinimo];
-        array[indiceValoreMinimo] = tmp;
     }
 
     public static void assertSorting(int[] array) {
@@ -89,7 +83,7 @@ public class OrdinaArray {
         for (int i = start; i <= finish; i++) {
             int indiceValoreMinimo = indiceMinimo(i, array);
             if(i != indiceValoreMinimo)
-                scambiaValori(i, indiceValoreMinimo, array);
+                swap(array, i, indiceValoreMinimo);
         }
         //should implement correctness check via assert
     }
@@ -248,5 +242,24 @@ public class OrdinaArray {
                 }
             }
         } while (swap);
+    }
+
+    public static void insertionSort(int[] array) {
+        int arrayLength = array.length;
+        for (int i = 1; i <= arrayLength - 1; i++) {
+            int value = array[i];
+            int j = i - 1;
+            while (j >= 0 && array[j] > value) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = value;
+        }
+    }
+
+    public static void swap (int[] array, int a, int b) {
+        int tmp = array[a];
+        array[a] = array[b];
+        array[b] = tmp;
     }
 }
