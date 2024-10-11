@@ -145,5 +145,37 @@ public class Main {
                 System.out.print(element + " ");
             System.out.println();
         }
+
+        //testing of OrdinaArray.bubbleSort method
+        System.out.println("testing of OrdinaArray.bubbleSort method: ");
+        int[] valori9 = new int[]{10, 15, 32, 2, 4, 23, 21, 10, 15, 32, 2, 4, 23, -21};
+        int[] valori10 = new int[]{-10, 15, 32, 2, 4, 23, 21, 10, 15, 32, 2, 4, 23, -21};
+        int[] valori11 = new int[]{10, 15, 32, 2, 4, -23, 21, 10, 15, 32, 2, 4, 23, -21};
+        int[] valori12 = new int[]{0, 0, 0, 0, 0, 0, 1, 0};
+
+        OrdinaArray.bubbleSort(valori9);
+        OrdinaArray.bubbleSort(valori10);
+        OrdinaArray.bubbleSort(valori11);
+        OrdinaArray.bubbleSort(valori12);
+
+        for(int elemento : valori9) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+
+        for(int elemento : valori10) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+
+        for(int elemento : valori11) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+
+        for(int elemento : valori12) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
     }
 }

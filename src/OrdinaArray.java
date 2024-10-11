@@ -233,4 +233,20 @@ public class OrdinaArray {
         }
         return result;
     }
+
+    public static void bubbleSort(int[] array) {
+        int arrayLength = array.length;
+        boolean swap;
+        do {
+            swap = false;
+            for (int i = 0; i < arrayLength - 1; i++) {
+                if (array[i] > array[i + 1]) {
+                    int tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
+                    swap = true;
+                }
+            }
+        } while (swap);
+    }
 }
