@@ -169,10 +169,6 @@ public class OrdinaArray {
                         for (int weightColumn = weightMiddle; weightColumn <= weightNColumns - 1; weightColumn++) {
                             mulTmp = mulTmp + (immagine[row + weightRow - weightMiddle][column + weightColumn - weightMiddle] * weights[weightRow][weightColumn]);
                             weightsSum += (int) weights[weightRow][weightColumn];
-                            System.out.println("row = " + row);
-                            System.out.println("column = " + column);
-                            System.out.println("mulTmp = " + mulTmp);
-                            System.out.println("weightSum = " + weightsSum);
                         }
                     }
                 }
@@ -183,10 +179,6 @@ public class OrdinaArray {
                         for (int weightColumn = 0; weightColumn <= weightMiddle; weightColumn++) {
                             mulTmp = mulTmp + (immagine[row + weightRow - 1][column + weightColumn - 1] * weights[weightRow][weightColumn]);
                             weightsSum += (int) weights[weightRow][weightColumn];
-                            System.out.println("row = " + row);
-                            System.out.println("column = " + column);
-                            System.out.println("mulTmp = " + mulTmp);
-                            System.out.println("weightSum = " + weightsSum);
                         }
                     }
                 }
@@ -197,10 +189,6 @@ public class OrdinaArray {
                         for (int weightColumn = weightMiddle; weightColumn <= weightNColumns - 1; weightColumn++) {
                             mulTmp = mulTmp + (immagine[row + weightRow - 1][column + weightColumn - weightMiddle] * weights[weightRow][weightColumn]);
                             weightsSum += (int) weights[weightRow][weightColumn];
-                            System.out.println("row = " + row);
-                            System.out.println("column = " + column);
-                            System.out.println("mulTmp = " + mulTmp);
-                            System.out.println("weightSum = " + weightsSum);
                         }
                     }
                 }
@@ -211,10 +199,6 @@ public class OrdinaArray {
                         for (int weightColumn = 0; weightColumn <= weightMiddle; weightColumn++) {
                             mulTmp = mulTmp + (immagine[row + weightRow - weightMiddle][column + weightColumn - weightMiddle] * weights[weightRow][weightColumn]);
                             weightsSum += (int) weights[weightRow][weightColumn];
-                            System.out.println("row = " + row);
-                            System.out.println("column = " + column);
-                            System.out.println("mulTmp = " + mulTmp);
-                            System.out.println("weightSum = " + weightsSum);
                         }
                     }
                 }
