@@ -128,5 +128,22 @@ public class Main {
                 System.out.print(element + " ");
             System.out.println();
         }
+
+        //Testing of OrdinaArray.blur
+        double[][] image2 = new double[][] {
+                {1.2, 1.3, 4.5, 6.0, 2.7},
+                {1.7, 3.3, 4.4, 10.5, 17.0},
+                {1.1, 4.5, 2.1, 25.3, 9.2},
+                {1.0, 9.5, 8.3, 2.9, 2.1}};
+
+        double[][] result3 = OrdinaArray.blur(image2);
+
+        System.out.println("matrix resulting of blur method: ");
+
+        for (double[] row : result3) {
+            for (double element : row)
+                System.out.print(element + " ");
+            System.out.println();
+        }
     }
 }

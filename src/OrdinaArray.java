@@ -135,4 +135,118 @@ public class OrdinaArray {
         }
         return outputArray;
     }
+
+    public static double[][] blur(double[][] immagine) {
+        int imageNRows = immagine.length;
+        int imageNColumns = immagine[0].length;
+        double mulTmp;
+
+        double[][] weights = new double[][] {
+                {1, 2, 1},
+                {2, 4, 2},
+                {1, 2, 1}};
+        int weightNRows = weights.length;
+        int weightNColumns = weights[0].length;
+        int weightMiddle = weightNRows / 2;
+
+        int weightsSum;
+
+        double[][] result = new double[imageNRows][imageNColumns];
+        for (int i = 0; i <= imageNRows - 1; i++) {
+            for (int j = 0; j <= imageNColumns - 1; j++) {
+                result[i][j] = 0;
+            }
+        }
+
+        for (int row = 0; row <= imageNRows - 1; row++) {
+            for (int column = 0; column <= imageNColumns - 1; column++) {
+                mulTmp = 0;
+                weightsSum = 0;
+
+                //top left angle
+                if (row == 0 && column == 0) {
+                    for (int weightRow = weightMiddle; weightRow <= weightNRows - 1; weightRow++) {
+                        for (int weightColumn = weightMiddle; weightColumn <= weightNColumns - 1; weightColumn++) {
+                            mulTmp = mulTmp + (immagine[row + weightRow - weightMiddle][column + weightColumn - weightMiddle] * weights[weightRow][weightColumn]);
+                            weightsSum += (int) weights[weightRow][weightColumn];
+                            System.out.println("row = " + row);
+                            System.out.println("column = " + column);
+                            System.out.println("mulTmp = " + mulTmp);
+                            System.out.println("weightSum = " + weightsSum);
+                        }
+                    }
+                }
+
+                //top right angle
+                if (row == 0 && column == imageNColumns - 1) {
+                    for (int weightRow = weightMiddle; weightRow <= weightNRows - 1; weightRow++) {
+                        for (int weightColumn = 0; weightColumn <= weightMiddle; weightColumn++) {
+                            mulTmp = mulTmp + (immagine[row + weightRow - 1][column + weightColumn - 1] * weights[weightRow][weightColumn]);
+                            weightsSum += (int) weights[weightRow][weightColumn];
+                            System.out.println("row = " + row);
+                            System.out.println("column = " + column);
+                            System.out.println("mulTmp = " + mulTmp);
+                            System.out.println("weightSum = " + weightsSum);
+                        }
+                    }
+                }
+
+                //bottom left angle
+                if (row == imageNRows - 1 && column == 0) {
+                    for (int weightRow = 0; weightRow <= weightMiddle; weightRow++) {
+                        for (int weightColumn = weightMiddle; weightColumn <= weightNColumns - 1; weightColumn++) {
+                            mulTmp = mulTmp + (immagine[row + weightRow - 1][column + weightColumn - weightMiddle] * weights[weightRow][weightColumn]);
+                            weightsSum += (int) weights[weightRow][weightColumn];
+                            System.out.println("row = " + row);
+                            System.out.println("column = " + column);
+                            System.out.println("mulTmp = " + mulTmp);
+                            System.out.println("weightSum = " + weightsSum);
+                        }
+                    }
+                }
+
+                //bottom right angle
+                if (row == imageNRows - 1 && column == imageNColumns - 1) {
+                    for (int weightRow = 0; weightRow <= weightMiddle; weightRow++) {
+                        for (int weightColumn = 0; weightColumn <= weightMiddle; weightColumn++) {
+                            mulTmp = mulTmp + (immagine[row + weightRow - weightMiddle][column + weightColumn - weightMiddle] * weights[weightRow][weightColumn]);
+                            weightsSum += (int) weights[weightRow][weightColumn];
+                            System.out.println("row = " + row);
+                            System.out.println("column = " + column);
+                            System.out.println("mulTmp = " + mulTmp);
+                            System.out.println("weightSum = " + weightsSum);
+                        }
+                    }
+                }
+
+                /*
+                //on one of the angles
+                if (row % (immagine.length - 1) == 0 && column % (immagine[0].length - 1) == 0) {
+
+                }
+                //first and last row without angles
+                if (row % (immagine.length - 1) == 0 && column % (immagine[0].length - 1) != 0) {
+
+                }
+                //first and last column without angles
+                if (row % (immagine.length - 1) != 0 && column % (immagine[0].length - 1) == 0) {
+
+                }
+                */
+
+                //everything else
+                if(row > 0 && row < imageNRows - 1 && column > 0 && column < imageNColumns - 1) {
+                    for (int weightRow = -1; weightRow <= 1; weightRow++) {
+                        for (int weightColumn = -1; weightColumn <= 1; weightColumn++) {
+                            mulTmp =mulTmp +  weights[weightRow + 1][weightColumn + 1] * immagine[row + weightRow][column + weightColumn];
+                            weightsSum += (int) weights[weightRow + 1][weightColumn + 1];
+                        }
+                    }
+                }
+                //da eseguire sempre
+                result[row][column] = mulTmp / weightsSum;
+            }
+        }
+        return result;
+    }
 }
